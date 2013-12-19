@@ -13,7 +13,10 @@
 	"require" : {
 		"php" : ">=5.4",
 		"splitice/radical-common" : "dev-master",
-		"splitice/radical-html" : "dev-master"
+		"splitice/radical-html" : "dev-master",
+		"splitice/radical-basic" : "dev-master",
+		"splitice/radical-net" : "dev-master",
+		"splitice/radical-file" : "dev-master"
 	},
 	"minimum-stability" : "dev"
 }
