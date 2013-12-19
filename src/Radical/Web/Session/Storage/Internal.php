@@ -2,7 +2,7 @@
 namespace Radical\Web\Session\Storage;
 
 use Radical\Web\Session\ModuleBase;
-use Core\Server;
+use Radical\Core\Server;
 
 class Internal extends ModuleBase implements ISessionStorage {
 	protected $data;

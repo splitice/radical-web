@@ -1,6 +1,6 @@
 <?php
 namespace Radical\Web\Resource\Shared;
-use Basic\String;
+use Radical\Basic\String;
 
 abstract class LibraryBase {
 	const URL = '';

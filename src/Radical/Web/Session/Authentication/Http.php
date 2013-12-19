@@ -6,7 +6,7 @@ use Radical\Web\Session\Authentication\Source\ISessionSource;
 
 class Http extends ModuleBase implements IAuthenticator {
 	function Authenticate(){
-		$headers = \Web\Page\Handler::$stack->top()->headers;
+		$headers = \Radical\Web\Page\Handler::$stack->top()->headers;
 		$headers->Status(401);
 		$headers->Add('WWW-Authenticate','Basic realm="Site Login"');
 		$headers->Output();

@@ -1,7 +1,7 @@
 <?php
 namespace Radical\Web\Page\Handler;
 
-use Basic\Arr\Object\CollectionObject;
+use Radical\Basic\Arr\Object\CollectionObject;
 
 class HeaderManager extends CollectionObject {
 	const DEFAULT_EXPIRE = 1200;//20minutes

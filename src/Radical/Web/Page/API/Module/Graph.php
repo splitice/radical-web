@@ -34,7 +34,7 @@ class Graph extends APIBase {
 		}
 	}
 	private function _getModule($module,$ns = 'DB'){
-		return \Core\Libraries::getProjectSpace($ns.'\\'.ucfirst($module));
+		return \Radical\Core\Libraries::getProjectSpace($ns.'\\'.ucfirst($module));
 	}
 	function can($module){		
 		return class_exists($this->_getModule($module)) || class_exists($this->_getModule($module,'Graph'));
@@ -71,7 +71,7 @@ class Graph extends APIBase {
 			ob_end_clean();
 		
 			return $ret;
-		}elseif($graph instanceof \Utility\Image\Graph\Schema\Graph){
+		}elseif($graph instanceof \Radical\Utility\Image\Graph\Schema\Graph){
 			$graph->box->width = $this->width;
 			$graph->box->height = $this->height;
 			ob_start();

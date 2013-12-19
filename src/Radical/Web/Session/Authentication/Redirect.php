@@ -8,12 +8,12 @@ class Redirect extends Post {
 		parent::__construct(false);
 	}
 	function Authenticate(){
-		if(\Utility\Net\Url::fromRequest() == $this->redirectUrl){
+		if(\Radical\Utility\Net\Url::fromRequest() == $this->redirectUrl){
 			return parent::Authenticate();
 		}
 		
 		//Redirect
-		$page = new \Web\Page\Controller\Special\Redirect($this->redirectUrl);
+		$page = new \Radical\Web\Page\Controller\Special\Redirect($this->redirectUrl);
 		$page->Execute('GET');
 		
 		//Bye

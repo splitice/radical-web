@@ -2,21 +2,14 @@
 namespace Radical\Web;
 
 use Radical\Utility\Net\IP;
-
 use Radical\Web\Session\Storage\Internal;
-
 use Radical\Web\Session\Authenticator;
 use Radical\Web\Session\Authentication\Source\ISessionSource;
 use Radical\Web\Session\Authentication\IAuthenticator;
 use Radical\Web\Session\Extra\ISessionExtra;
 use Radical\Web\Session\Storage\ISessionStorage;
 
-class Session {
-	static $__dependencies = array(
-			'interface.Web.Session.Handler.Internal.ISessionHandler',
-			'interface.Web.Session.Extra.Interfaces.ISessionExtra',
-		);
-	
+class Session {	
 	const DEFAULT_IP = '::1';
 	
 	/**
@@ -37,7 +30,7 @@ class Session {
 	 * @return \Utility\Net\IP
 	 */
 	static function IP(){
-		if(\Core\Server::isCLI()){
+		if(\Radical\Core\Server::isCLI()){
 			return new IP(static::DEFAULT_IP);
 		}
 		if(isset($_SERVER['HTTP_X_REAL_IP'])){

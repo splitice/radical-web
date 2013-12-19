@@ -43,11 +43,11 @@ class Database extends ModuleBase implements ISessionStorage {
 	}
 	
 	function get($name){
-		return isset($this->data[$offset]) ? $this->data[$offset] : null;
+		return isset($this->data[$name]) ? $this->data[$name] : null;
 	}
 	function set($name,$data){
 		session_start();
-		if (is_null($offset)) {
+		if (is_null($name)) {
 			$_SESSION[$name] = $data;
 		}else{
 			$_SESSION[] = $data;

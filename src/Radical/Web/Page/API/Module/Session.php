@@ -4,7 +4,7 @@ namespace Radical\Web\Page\API\Module;
 class Session extends APIBase {
 	function getUserDetails(){
 		$output=array();
-		if(\Web\Session::$auth->isLoggedIn()){
+		if(\Radical\Web\Session::$auth->isLoggedIn()){
 			$user = \Web\Session::$auth->getUser();
 			$output['id'] = $user->getId();
 			$output['name'] = $user->getUsername();

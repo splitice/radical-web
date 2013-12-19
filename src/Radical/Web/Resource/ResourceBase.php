@@ -1,7 +1,7 @@
 <?php
 namespace Radical\Web\Resource;
 
-use Core\Server;
+use Radical\Core\Server;
 
 abstract class ResourceBase {
 	const PATH = '|';

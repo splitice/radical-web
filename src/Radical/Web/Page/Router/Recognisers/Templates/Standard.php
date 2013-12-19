@@ -2,7 +2,7 @@
 namespace Radical\Web\Page\Router\Recognisers\Templates;
 
 use Radical\Utility\Net\URL;
-use Basic\String\Format;
+use Radical\Basic\String\Format;
 use Radical\Web\Page\Router\IPageRecognise;
 use Radical\Web\Page\Controller;
 use Radical\Web\Page\Handler;

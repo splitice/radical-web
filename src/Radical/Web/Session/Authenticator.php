@@ -90,10 +90,10 @@ class Authenticator {
 		return $this->_source()->isLoggedIn();
 	}
 	function isAdmin(){
-		if(!isset(\Web\Session::$data['user']))
+		if(!isset(\Radical\Web\Session::$data['user']))
 			return false;
 		
-		$user = \Web\Session::$data['user'];
+		$user = \Radical\Web\Session::$data['user'];
 		if($user instanceof IUserAdmin){
 			return $user->isAdmin();
 		}

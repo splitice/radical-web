@@ -15,7 +15,8 @@ class DefaultCacheManager implements ICacheManager {
 		if($headers->status == 200){
 			if(isset($headers['Last-Modified'])){				
 				//Check if the user sent a If-Modified-Since header in their request
-				if($ims = \Web\Page\Request::header('If-Modified-Since')){
+				$ims = \Radical\Web\Page\Request::header('If-Modified-Since');
+				if($ims){
 					//Parse the time in the last modified sent from the page handler
 					$lmts = strtotime($headers['Last-Modified']);
 					

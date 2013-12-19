@@ -1,7 +1,7 @@
 <?php
 namespace Radical\Web\Resource\Javascript;
 
-use Core\Libraries;
+use Radical\Core\Libraries;
 use Radical\Utility\HTML\Tag;
 
 class Library extends Tag\Script {

@@ -1,7 +1,7 @@
 <?php
 namespace Radical\Web\Page;
 
-class RequestURL extends \Utility\Net\URL {
+class RequestURL extends \Radical\Utility\Net\URL {
 	private $localPath;
 	
 	function __construct($data){
