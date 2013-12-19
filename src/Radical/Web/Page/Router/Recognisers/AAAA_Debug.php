@@ -1,12 +1,12 @@
 <?php
 namespace Radical\Web\Page\Router\Recognisers;
 
-use Utility\Net\URL;
+use Radical\Utility\Net\URL;
 use Radical\Web\Page\Router\Recognise;
 use Radical\Web\Page\Router\IPageRecognise;
-use Utility\Net\HTTP;
+use Radical\Utility\Net\HTTP;
 use Radical\Web\Page\Controller;
-use Model\Database\DBAL\Handler\QueryLog;
+use Radical\Database\DBAL\Handler\QueryLog;
 
 class AAAA_Debug implements IPageRecognise {
 	private static $enable = true;

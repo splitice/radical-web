@@ -3,7 +3,7 @@ namespace Radical\Web\Page\Handler;
 
 use Radical\Web\Page\Cache\DefaultCacheManager;
 use Radical\Web\Page\Handler\Exceptions\PageHandlerException;
-use Utility\Net\External\ContentAPI\Recognise;
+use Radical\Utility\Net\External\ContentAPI\Recognise;
 use Radical\Web\Page\Handler as PH;
 
 abstract class PageRequestBase {

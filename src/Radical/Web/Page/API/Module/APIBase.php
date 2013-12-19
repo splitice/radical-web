@@ -1,7 +1,7 @@
 <?php
 namespace Radical\Web\Page\API\Module;
 
-abstract class APIBase extends \Core\Object implements IAPIModule {
+abstract class APIBase implements IAPIModule {
 	protected $data;
 	protected $type;
 	function __construct($data,$type){

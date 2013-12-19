@@ -1,6 +1,6 @@
 <?php
 namespace Radical\Web\Resource\CSS;
-use Utility\HTML\Tag;
+use Radical\Utility\HTML\Tag;
 
 class Library extends Tag\Link {
 	static $__dependencies = array('interface.HTML.CSS.ICSSLibrary');

@@ -2,7 +2,7 @@
 namespace Radical\Web\Resource\Shared;
 use Basic\String;
 
-abstract class LibraryBase extends \Core\Object {
+abstract class LibraryBase {
 	const URL = '';
 	protected $path;
 	public $depends = array();

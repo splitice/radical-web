@@ -1,14 +1,14 @@
 <?php
 namespace Radical\Web\Page\Admin\Modules;
 
-use Model\Database\Model\TableReference;
+use Radical\Database\Model\TableReference;
 
-use Model\Database\Model\Table\TableManagement;
+use Radical\Database\Model\Table\TableManagement;
 
 use Radical\Web\Page\Admin\MultiAdminModuleBase;
-use Model\Database\Model\TableReferenceInstance;
+use Radical\Database\Model\TableReferenceInstance;
 use Radical\Web\Session\User\IUserAdmin;
-use Utility\Net\URL\Pagination\QueryMethod;
+use Radical\Utility\Net\URL\Pagination\QueryMethod;
 use Radical\Web\Page\Controller\Special\Redirect;
 use Radical\Web\Form;
 

@@ -67,7 +67,7 @@ class Template extends Page\Handler\PageBase {
 	 * @return array
 	 */
 	static function adapters(){
-		return \Core\Libraries::get('Web\\Templates\\Adapter\\*');
+		return \Radical\Core\Libraries::get('Web\\Templates\\Adapter\\*');
 	}
 	
 	/**

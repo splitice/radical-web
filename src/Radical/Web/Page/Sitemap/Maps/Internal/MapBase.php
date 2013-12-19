@@ -1,6 +1,6 @@
 <?php
 namespace Radical\Web\Page\Sitemap\Maps\Internal;
-use Utility\Format\Sitemap\Urlset;
+use Radical\Utility\Format\Sitemap\Urlset;
 
 use Radical\Web\Sitemap\Internal;
 use Radical\Web\Sitemap\SitemapBase;

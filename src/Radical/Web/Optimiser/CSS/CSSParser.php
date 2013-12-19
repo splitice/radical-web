@@ -98,7 +98,6 @@ class CSSParser {
 		if($sResult === null) {
 			throw new \Exception("Identifier expected, got {$this->peek(5)}");
 		}
-		$sCharacter;
 		while(($sCharacter = $this->parseCharacter(true)) !== null) {
 			$sResult .= $sCharacter;
 		}
@@ -142,7 +141,6 @@ class CSSParser {
 			if($this->comes('\n') || $this->comes('\r')) {
 				return '';
 			}
-			$aMatches;
 			if(preg_match('/[0-9a-fA-F]/Su', $this->peek()) === 0) {
 				return $this->consume(1);
 			}
@@ -368,7 +366,6 @@ class CSSParser {
 	}
 	
 	private function consumeExpression($mExpression) {
-		$aMatches;
 		if(preg_match($mExpression, $this->inputLeft(), $aMatches, PREG_OFFSET_CAPTURE) === 1) {
 			return $this->consume($aMatches[0][0]);
 		}

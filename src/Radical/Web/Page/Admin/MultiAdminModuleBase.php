@@ -3,7 +3,7 @@ namespace Radical\Web\Page\Admin;
 
 use Radical\Web\Page\Controller\Special\Redirect;
 
-use Utility\Net\URL\Path;
+use Radical\Utility\Net\URL\Path;
 use Radical\Web\Page\Handler;
 use Radical\Web\Templates;
 

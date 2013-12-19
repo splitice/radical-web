@@ -1,8 +1,8 @@
 <?php
 namespace Radical\Web\Mobile;
 
-use Utility\HTML\Tag\Meta;
-use Utility\HTML\Tag\Link;
+use Radical\Utility\HTML\Tag\Meta;
+use Radical\Utility\HTML\Tag\Link;
 
 class HTML extends Config {
 	static function build(){

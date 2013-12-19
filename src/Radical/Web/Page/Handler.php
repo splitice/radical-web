@@ -3,7 +3,7 @@ namespace Radical\Web\Page;
 
 use Radical\Web\Page\Handler\NullPageRequest;
 
-class Handler extends \Core\Object {
+class Handler {
 	static $__dependencies = array('interface.Web.Page.Handler.IPage','interface.Web.Page.Handler.IPage');
 	
 	/**

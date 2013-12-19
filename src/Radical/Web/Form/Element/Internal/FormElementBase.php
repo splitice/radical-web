@@ -1,7 +1,7 @@
 <?php
 namespace Radical\Web\Form\Element\Internal;
 
-use Utility\HTML\Element;
+use Radical\Utility\HTML\Element;
 
 abstract class FormElementBase extends Element {	
 	function __construct($tag,$name){

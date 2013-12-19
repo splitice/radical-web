@@ -1,7 +1,7 @@
 <?php
 namespace Radical\Web\Form\Element\Select;
 
-use Utility\HTML\Element;
+use Radical\Utility\HTML\Element;
 
 class Option extends Element {
 	function __construct($value,$text = null,$selected = false){

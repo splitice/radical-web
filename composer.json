@@ -11,6 +11,9 @@
 	"type" : "library",
 	"description" : "radical-web",
 	"require" : {
-		"php" : ">=5.4"
-	}
+		"php" : ">=5.4",
+		"splitice/radical-common" : "dev-master",
+		"splitice/radical-html" : "dev-master"
+	},
+	"minimum-stability" : "dev"
 }

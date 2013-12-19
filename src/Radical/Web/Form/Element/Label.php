@@ -1,7 +1,7 @@
 <?php
 namespace Radical\Web\Form\Element;
 
-use Utility\HTML\Element;
+use Radical\Utility\HTML\Element;
 
 class Label extends Element {
 	protected $name;

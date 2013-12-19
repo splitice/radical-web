@@ -1,7 +1,7 @@
 <?php
 namespace Radical\Web\Resource;
 
-use Utility\HTML\Tag;
+use Radical\Utility\HTML\Tag;
 
 class Javascript extends ResourceBase {
 	const PATH = 'js';

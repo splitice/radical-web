@@ -1,8 +1,8 @@
 <?php
 namespace Radical\Web\Page\API\Module;
 
-use Model\Database\Model\TableReferenceInstance;
-use Model\Database;
+use Radical\Database\Model\TableReferenceInstance;
+use Radical\Database;
 
 abstract class DatabaseAPI extends APIBase {
 	var $class;

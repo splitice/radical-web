@@ -1,7 +1,7 @@
 <?php
 namespace Radical\Web;
 
-use Utility\Net\IP;
+use Radical\Utility\Net\IP;
 
 use Radical\Web\Session\Storage\Internal;
 
@@ -11,7 +11,7 @@ use Radical\Web\Session\Authentication\IAuthenticator;
 use Radical\Web\Session\Extra\ISessionExtra;
 use Radical\Web\Session\Storage\ISessionStorage;
 
-class Session extends \Core\Object {
+class Session {
 	static $__dependencies = array(
 			'interface.Web.Session.Handler.Internal.ISessionHandler',
 			'interface.Web.Session.Extra.Interfaces.ISessionExtra',

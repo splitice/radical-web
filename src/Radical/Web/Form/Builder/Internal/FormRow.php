@@ -1,7 +1,7 @@
 <?php
 namespace Radical\Web\Form\Builder\Internal;
 
-use Basic\Arr\Object\CollectionObject;
+use Radical\Basic\Arr\Object\CollectionObject;
 
 class FormRow extends CollectionObject {
 	function toHTML(){

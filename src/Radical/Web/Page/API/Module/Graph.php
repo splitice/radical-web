@@ -1,8 +1,8 @@
 <?php
 namespace Radical\Web\Page\API\Module;
-use Utility\Image\Graph\Source\IGraphSource;
+use Radical\Utility\Image\Graph\Source\IGraphSource;
 use Radical\Web\Page\Handler;
-use Utility\Image\Graph\Renderer;
+use Radical\Utility\Image\Graph\Renderer;
 
 class Graph extends APIBase {
 	private $graph;

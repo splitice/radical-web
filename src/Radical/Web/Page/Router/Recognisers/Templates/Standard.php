@@ -1,7 +1,7 @@
 <?php
 namespace Radical\Web\Page\Router\Recognisers\Templates;
 
-use Utility\Net\URL;
+use Radical\Utility\Net\URL;
 use Basic\String\Format;
 use Radical\Web\Page\Router\IPageRecognise;
 use Radical\Web\Page\Controller;

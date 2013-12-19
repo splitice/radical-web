@@ -2,9 +2,9 @@
 namespace Radical\Web\Form\Builder\Adapter;
 
 use Radical\Web\Form\Element;
-use Model\Database\Model\Table;
+use Radical\Database\Model\Table;
 use Radical\Web\Form\Builder\Internal;
-use Model\Database\Model\TableReferenceInstance;
+use Radical\Database\Model\TableReferenceInstance;
 use Radical\Web\Form\FormContainer;
 
 class DatabaseTable implements IAdapter {

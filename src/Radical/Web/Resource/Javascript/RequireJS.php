@@ -3,7 +3,7 @@ namespace Radical\Web\Resource\Javascript;
 
 use Radical\Web\Resource\Javascript\Libraries\IJavascriptLibrary;
 
-use Utility\HTML\Tag\Script;
+use Radical\Utility\HTML\Tag\Script;
 
 class RequireJS extends Script {
 	protected $modules = array();

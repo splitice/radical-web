@@ -2,7 +2,7 @@
 namespace Radical\Web\Resource\Javascript;
 
 use Core\Libraries;
-use Utility\HTML\Tag;
+use Radical\Utility\HTML\Tag;
 
 class Library extends Tag\Script {
 	static $__dependencies = array('interface.HTML.Javascript.IJavascriptLibrary');

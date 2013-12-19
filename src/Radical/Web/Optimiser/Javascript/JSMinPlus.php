@@ -365,7 +365,8 @@ class JSMinPlus
 			break;
 
 			case OP_SEMICOLON:
-				if ($expression = $n->expression)
+				$expression = $n->expression;
+				if ($expression)
 					$s = $this->parseTree($expression);
 			break;
 
@@ -1527,7 +1528,8 @@ class JSNode
 
 	public function __construct($t, $type=0)
 	{
-		if ($token = $t->currentToken())
+		$token = $t->currentToken();
+		if ($token)
 		{
 			$this->type = $type ? $type : $token->type;
 			$this->value = $token->value;

@@ -1,7 +1,7 @@
 <?php
 namespace Radical\Web\Mobile;
 
-abstract class ConfigBase extends \Core\Object {
+abstract class ConfigBase {
 	static $IS_WEBAPP = false;
 	static $HIDE_CHROME = false;
 	static $LOADSCREEN = null;//string or array of MODEL=>screen

@@ -5,6 +5,7 @@ use Radical\Web\Widget;
 use Radical\Web\Page\Handler\IPage;
 use Radical\Web\Page\Handler\SubRequest;
 use Radical\Web\Form\Builder\FormBuilder;
+use Radical\Web\Template;
 
 /**
  * The scope passed to templates, commonly referred to as ($_)
@@ -98,7 +99,7 @@ class Scope {
 		
 		//Is relative? Make siterooted
 		if($first_part{0} != '/'){
-			$object = \Core\Server::getSiteRoot().$object;
+			$object = \Radical\Core\Server::getSiteRoot().$object;
 		}
 		
 		return $object;
@@ -126,7 +127,7 @@ class Scope {
 			$_ = $this;
 		else
 			$_ = new Scope($vars, $this->handler);
-		$___path = \Web\Template::getPath($name,$container);
+		$___path = Template::getPath($name,$container);
 		if(!$___path){
 			throw new \Exception('Couldnt find '.$name.' from '.$container.' to include.');
 		}

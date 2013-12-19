@@ -1,11 +1,9 @@
 <?php
 namespace Radical\Web\Form\Builder;
 
-use Utility\HTML\Element;
+use Radical\Utility\HTML\Element;
 
-class FormInstance extends FormCommon implements IFormInstance {
-	static $__dependencies = array('php.HTML.Form.Builder.Adapter');
-	
+class FormInstance extends FormCommon implements IFormInstance {	
 	protected $form;
 	protected $handler;
 	
@@ -17,7 +15,7 @@ class FormInstance extends FormCommon implements IFormInstance {
 		
 		if(!is_string($args[0])){
 			$handler = $args[0];
-			foreach(\Core\Libraries::get('Web\\Form\\Builder\\Adapter\\*') as $class){
+			foreach(\Radical\Core\Libraries::get('Web\\Form\\Builder\\Adapter\\*') as $class){
 				if($class::is($handler)){
 					$this->handler = new $class($handler);
 					unset($args[0]);

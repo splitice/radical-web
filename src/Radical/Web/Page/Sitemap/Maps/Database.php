@@ -1,9 +1,9 @@
 <?php
 namespace Radical\Web\Page\Sitemap\Maps;
 
-use Model\Database\Model\TableReferenceInstance;
-use Utility\Format\Sitemap\SitemapContainer;
-use Utility\Format\Sitemap\Url;
+use Radical\Database\Model\TableReferenceInstance;
+use Radical\Utility\Format\Sitemap\SitemapContainer;
+use Radical\Utility\Format\Sitemap\Url;
 
 class Database extends Internal\MapBase {
 	/**

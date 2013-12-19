@@ -3,7 +3,7 @@ namespace Radical\Web;
 
 use Radical\Web\Resource\Javascript\Libraries\IJavascriptLibrary;
 use Radical\Web\Resource\Javascript\RequireJS;
-use Utility\HTML\Tag\Script;
+use Radical\Utility\HTML\Tag\Script;
 
 class Resource {
 	static $javascript = array();

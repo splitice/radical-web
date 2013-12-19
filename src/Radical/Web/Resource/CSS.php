@@ -1,7 +1,7 @@
 <?php
 namespace Radical\Web\Resource;
 
-use Utility\HTML\Tag;
+use Radical\Utility\HTML\Tag;
 
 class CSS extends ResourceBase {
 	const PATH = 'css';

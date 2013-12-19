@@ -4,7 +4,7 @@ use Radical\Web\Page\Admin\Menu;
 use Radical\Web\Page\Handler\HTMLPageBase;
 use Radical\Web\Templates;
 use Radical\Web\Session\User\IUserAdmin;
-use Utility\Net\URL\Pagination\QueryMethod;
+use Radical\Utility\Net\URL\Pagination\QueryMethod;
 use Radical\Web\Page\Controller\Special\Redirect;
 use Radical\Web\Page\Handler;
 use Radical\Web\Page;

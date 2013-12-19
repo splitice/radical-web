@@ -1,10 +1,10 @@
 <?php
 namespace Radical\Web\Page\Router;
 
-use Utility\Net\URL;
+use Radical\Utility\Net\URL;
 use Radical\Web\Page\Request;
 
-class Recognise extends \Core\Object {
+class Recognise {
 	static $__dependencies = array('interface.Web.Page.Router.IPageRecognise','interface.Web.Page.API.IAPIModule');
 	
 	static function fromRequest(){
