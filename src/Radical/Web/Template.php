@@ -35,7 +35,7 @@ class Template extends Page\Handler\PageBase {
 	function __construct($name, $vars = array(), $container = self::DEFAULT_CONTAINER) {
 		$this->vars = $vars;
 		$this->name = $name;
-		$this->file = new \File(static::getPath($name,$container));
+		$this->file = new \Radical\File(static::getPath($name,$container));
 		$this->container = $container;
 		if(!$this->file->Exists()){
 			throw new \Exception('Template '.$name.' in '.$container.' doesnt exist');
@@ -87,8 +87,8 @@ class Template extends Page\Handler\PageBase {
 	 * @return boolean
 	 */
 	static function isSupported($path){
-		if(!($path instanceof \File)){
-			$path = new \File($path);
+		if(!($path instanceof \Radical\File)){
+			$path = new \Radical\File($path);
 		}
 		
 		$handlers = static::adapters();

@@ -7,5 +7,6 @@
 	<buildpathentry kind="src" path="src"/>
 	<buildpathentry kind="src" path="vendor/symfony/filesystem"/>
 	<buildpathentry kind="src" path="vendor/splitice/radical-html/src"/>
+	<buildpathentry kind="src" path="vendor/splitice/radical-file/src"/>
 	<buildpathentry kind="src" path="vendor/splitice/radical-basic/src"/>
 </buildpath>

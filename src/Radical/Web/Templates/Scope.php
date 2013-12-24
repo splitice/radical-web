@@ -4,7 +4,6 @@ namespace Radical\Web\Templates;
 use Radical\Web\Widget;
 use Radical\Web\Page\Handler\IPage;
 use Radical\Web\Page\Handler\SubRequest;
-use Radical\Web\Form\Builder\FormBuilder;
 use Radical\Web\Template;
 
 /**
@@ -15,7 +14,6 @@ use Radical\Web\Template;
  *
  */
 class Scope {
-	public $form;
 	public $vars = array();
 	public $handler;
 	
@@ -26,7 +24,6 @@ class Scope {
 	 * @param IPage $handler the page handler that called for a template
 	 */
 	function __construct(array $vars,IPage $handler = null){
-		$this->form = new FormBuilder();
 		$this->vars = $vars;
 		$this->handler = $handler;
 	}

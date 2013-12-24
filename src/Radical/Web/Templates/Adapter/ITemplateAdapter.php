@@ -17,7 +17,7 @@ interface ITemplateAdapter {
 	 * 
 	 * @param \File $file file to render
 	 */
-	function __construct(\File $file);
+	function __construct(\Radical\File $file);
 	
 	/**
 	 * Render/Output the template.
@@ -32,5 +32,5 @@ interface ITemplateAdapter {
 	 * 
 	 * @param \File $file file to process
 	 */
-	static function is(\File $file);
+	static function is(\Radical\File $file);
 }

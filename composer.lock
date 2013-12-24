@@ -76,16 +76,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/splitice/radical-file.git",
-                "reference": "511ef0f6365c81f933328eeef71e89783e25afd0"
+                "reference": "c75a7b1fd7f8cf3c14102d89c72baf1c9324216e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splitice/radical-file/zipball/511ef0f6365c81f933328eeef71e89783e25afd0",
-                "reference": "511ef0f6365c81f933328eeef71e89783e25afd0",
+                "url": "https://api.github.com/repos/splitice/radical-file/zipball/c75a7b1fd7f8cf3c14102d89c72baf1c9324216e",
+                "reference": "c75a7b1fd7f8cf3c14102d89c72baf1c9324216e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4"
+                "php": ">=5.4",
+                "splitice/radical-common": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -98,7 +99,7 @@
             "keywords": [
                 "radical-php"
             ],
-            "time": "2013-12-19 08:15:58"
+            "time": "2013-12-19 10:25:24"
         },
         {
             "name": "splitice/radical-html",

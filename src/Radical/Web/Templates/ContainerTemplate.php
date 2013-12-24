@@ -1,7 +1,7 @@
 <?php
 namespace Radical\Web\Templates;
 
-class ContainerTemplate extends \Web\Template {
+class ContainerTemplate extends \Radical\Web\Template {
 	const DEFAULT_CONTAINER = 'Common/container';
 	
 	public $incBody = true;

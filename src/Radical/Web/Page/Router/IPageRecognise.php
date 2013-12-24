@@ -2,5 +2,5 @@
 namespace Radical\Web\Page\Router;
 
 interface IPageRecognise {
-	static function recognise(\Utility\Net\URL $url);
+	static function recognise(\Radical\Utility\Net\URL $url);
 }

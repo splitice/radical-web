@@ -8,7 +8,7 @@ class Redirect extends Post {
 		parent::__construct(false);
 	}
 	function Authenticate(){
-		if(\Radical\Utility\Net\Url::fromRequest() == $this->redirectUrl){
+		if(\Radical\Utility\Net\URL::fromRequest() == $this->redirectUrl){
 			return parent::Authenticate();
 		}
 		

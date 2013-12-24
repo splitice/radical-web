@@ -14,14 +14,14 @@ use Radical\Web\Templates\Scope;
  */
 class PHPTemplate implements ITemplateAdapter {
 	private $file;
-	function __construct(\File $file){
+	function __construct(\Radical\File $file){
 		$this->file = $file;
 	}
 	function output(Scope $_){
 		global $_CONFIG;
 		include($this->file);
 	}
-	static function is(\File $file){
+	static function is(\Radical\File $file){
 		if($file->getExtension() == 'php'){
 			return true;
 		}

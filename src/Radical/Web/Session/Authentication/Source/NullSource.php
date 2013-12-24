@@ -1,9 +1,7 @@
 <?php
 namespace Radical\Web\Session\Authentication\Source;
 
-use Radical\Database\DynamicTypes\Password;
 use Radical\Web\Session\ModuleBase;
-use Radical\Database\Model\TableReferenceInstance;
 
 class NullSource extends ModuleBase implements ISessionSource {
 	function login($username,$password){
