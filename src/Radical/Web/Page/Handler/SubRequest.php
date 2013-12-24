@@ -21,7 +21,7 @@ class SubRequest extends PageRequestBase {
 		
 		return $data;
 	}
-	static function fromURL(\Utility\Net\URL $url){
+	static function fromURL(\Radical\Utility\Net\URL $url){
 		$r = parent::fromURL($url);
 		return new static($r);
 	}

@@ -3,8 +3,8 @@ namespace Radical\Web\Page\Handler;
 
 use Radical\Web\Page\Cache\DefaultCacheManager;
 use Radical\Web\Page\Handler\Exceptions\PageHandlerException;
-use Radical\Utility\Net\External\ContentAPI\Recognise;
 use Radical\Web\Page\Handler as PH;
+use Radical\Web\Page\Router\Recognise;
 
 abstract class PageRequestBase {
 	const MAX_REQUEST_DEPTH = 20;
@@ -78,7 +78,7 @@ abstract class PageRequestBase {
 		if($method=='GET') $this->cache->postExecute($this->headers);
 	}
 	
-	static function fromURL(\Utility\Net\URL $url){
+	static function fromURL(\Radical\Utility\Net\URL $url){
 		return Recognise::fromURL($url);
 	}
 }

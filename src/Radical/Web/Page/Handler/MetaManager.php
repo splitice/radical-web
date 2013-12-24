@@ -1,7 +1,8 @@
 <?php
 namespace Radical\Web\Page\Handler;
 
-class MetaManager extends \Basic\Arr\Object\CollectionObject {
+use Radical\Basic\Arr\Object\CollectionObject;
+class MetaManager extends CollectionObject {
 	function __construct($data = array()){
 		if(!isset($data['keywords'])){
 			$data['keywords'] = array();

@@ -1,8 +1,7 @@
 <?php
 namespace Radical\Web\Page\Handler;
 
-use Core\ErrorHandling\Errors\Internal\ErrorException;
-use Core\ErrorHandling;
+use Radical\Core\ErrorHandling;
 
 abstract class PageBase implements IPage {
 	function can($method){

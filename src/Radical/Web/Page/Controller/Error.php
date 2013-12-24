@@ -4,8 +4,7 @@ namespace Radical\Web\Page\Controller;
 use Radical\Web\Page\Router\Recognise;
 use Radical\Web\Page\Handler\HTMLPageBase;
 use Radical\Web\Template;
-use Radical\Web\Page\Handler;
-use Core\ErrorHandling\Errors\Internal\ErrorException;
+use Radical\Core\ErrorHandling\Errors\Internal\ErrorException;
 
 class Error extends HTMLPageBase {
 	private $error;
@@ -20,7 +19,7 @@ class Error extends HTMLPageBase {
 	 * @throws \Exception
 	 */
 	function GET(){
-		\Web\Page\Handler::top()->headers->status(500);
+		\Radical\Web\Page\Handler::top()->headers->status(500);
 		return new Template('error',array('error'=>$this->error),'framework');
 	}
 	
@@ -33,7 +32,7 @@ class Error extends HTMLPageBase {
 		return $this->GET();
 	}
 	
-	static function fromURL(\Utility\Net\URL $url){
+	static function fromURL(\Radical\Utility\Net\URL $url){
 		$page = Recognise::fromURL($url);
 		return new static($page);
 	}

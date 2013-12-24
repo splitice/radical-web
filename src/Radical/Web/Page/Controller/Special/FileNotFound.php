@@ -2,7 +2,6 @@
 namespace Radical\Web\Page\Controller\Special;
 
 use Radical\Web\Page\Handler\HTMLPageBase;
-use Radical\Web\Page\Handler;
 
 class FileNotFound extends HTMLPageBase {
 	function title(){
@@ -15,10 +14,10 @@ class FileNotFound extends HTMLPageBase {
 	 * @throws \Exception
 	 */
 	function GET() {
-		$headers = \Web\Page\Handler::$stack->top()->headers;
+		$headers = \Radical\Web\Page\Handler::$stack->top()->headers;
 		$headers->Status(404);
 
-		return new \Web\Template('error', array('error'=>$this),'framework');
+		return new \Radical\Web\Template('error', array('error'=>$this),'framework');
 	}
 	function getHeading(){
 		return $this->Title();

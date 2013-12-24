@@ -10,7 +10,7 @@ class NotModified extends Handler\PageBase {
 	 * @throws \Exception
 	 */
 	function GET() {
-		$headers = \Web\Page\Handler::$stack->top()->headers;
+		$headers = \Radical\Web\Page\Handler::$stack->top()->headers;
 		$headers->Status(304);
 
 		return false;
