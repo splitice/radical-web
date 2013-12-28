@@ -33,4 +33,10 @@ class Recognise {
 			array_unshift(self::$recognisers, $class);
 		}
 	}
+	
+	static function register_expr($expr){
+		foreach(\Radical\Core\Libraries::get($expr) as $class){
+			self::register($class);
+		}
+	}
 }
