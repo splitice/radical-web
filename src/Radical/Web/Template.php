@@ -67,7 +67,7 @@ class Template extends Page\Handler\PageBase {
 	 * @return array
 	 */
 	static function adapters(){
-		return \Radical\Core\Libraries::get('Web\\Templates\\Adapter\\*');
+		return \Radical\Core\Libraries::get('Radical\\Web\\Templates\\Adapter\\*');
 	}
 	
 	/**
@@ -114,8 +114,8 @@ class Template extends Page\Handler\PageBase {
 		//Normally we would use the resource handler for this
 		//howeaver as well as detirming which part of the system
 		//to fetch from we also have a variable extension
-		//@todo overriding order
-		$expr = $BASEPATH . '*' . DS . 'template' . DS . $output . DS . $name.'.*';
+		
+		$expr = $BASEPATH . 'template' . DS . $output . DS . $name.'.*';
 		foreach(glob($expr) as $path){
 			if(static::isSupported($path)){
 				return $path;
