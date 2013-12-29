@@ -4,6 +4,7 @@ namespace Radical\Core\ErrorHandling\Handlers;
 use Radical\Core\ErrorHandling\Errors\Internal\ErrorBase;
 use Radical\Core\ErrorHandling\Errors\Internal\ErrorException;
 use Radical\Web\Page\Handler\PageRequest;
+use Radical\Web\Page\Controller\Error;
 
 class WebOutputErrorHandler extends ErrorHandlerBase {
 	function error(ErrorBase $error) {
@@ -17,7 +18,7 @@ class WebOutputErrorHandler extends ErrorHandlerBase {
 			\Radical\Web\Page\Handler::init();
 			\Radical\Web\Page\Handler::$stack->push(new PageRequest(null));
 			//@todo Remove ugly hack
-			$page = $error->getPage();
+			$page = new Error($error);
 			while($page){
 				$page = $page->GET();
 			}
