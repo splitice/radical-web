@@ -28,7 +28,7 @@ class Recognise {
 	
 	static function register($class, $position = self::POSITION_END){
 		if($position == self::POSITION_END){
-			self::$recognisers[] = $class;
+			self::$recognisers[$class] = $class;
 		}else{
 			array_unshift(self::$recognisers, $class);
 		}
