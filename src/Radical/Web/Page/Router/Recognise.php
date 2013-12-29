@@ -14,6 +14,7 @@ class Recognise {
 	
 	static function fromURL(URL $url, $excluding = array()){
 		foreach(self::$recognisers as $class){
+			$class = ltrim($class,'\\');
 			if(\Radical\Core\CoreInterface::oneof($class,'Radical\\Web\\Page\\Router\\IPageRecognise') && !in_array($class, $excluding)){
 				$r = $class::Recognise(clone $url);
 				if($r){

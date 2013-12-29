@@ -26,7 +26,17 @@ class Standard implements IPageRecognise {
 					}
 					if(is_string($class)){
 						if($class{0} != '\\'){
-							$class = '\\Web\\Page\\Controller\\'.$class;
+							$class_expr = '\\*\\Web\\Page\\Controller\\'.$class;
+							$class = null;
+							
+							foreach(\Radical\Core\Libraries::get($class_expr) as $class){
+								//$class set
+								break;
+							}
+							
+							if($class === null){
+								return null;
+							}
 						}
 						return new $class($data);
 					}
