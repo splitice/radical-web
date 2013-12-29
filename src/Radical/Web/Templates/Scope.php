@@ -80,9 +80,9 @@ class Scope {
 	 * @throws \Exception
 	 * @return string
 	 */
-	function url($object){
+	function url($object, $param = null){
 		if(is_object($object)){
-			$object = $object->toURL();
+			$object = $object->toURL($param);
 		}
 		if(!is_string($object)){
 			throw new \Exception('Unknown type to URLify: '.gettype($object));
@@ -108,8 +108,8 @@ class Scope {
 	 * @param mixed $object
 	 * @return string
 	 */
-	function u($object){
-		return $this->url($object);
+	function u($object, $param = null){
+		return $this->url($object, $param);
 	}
 	
 	/**
