@@ -44,7 +44,7 @@ class Handler {
 	}
 	
 	static function objectify($object,$data = null){
-		$class = '\\Web\\Page\\Controller\\'.$object;
+		$class = \Radical\Core\Libraries::getProjectSpace('Web\\Page\\Controller\\'.$object);
 		return new $class($data);
 	}
 }
