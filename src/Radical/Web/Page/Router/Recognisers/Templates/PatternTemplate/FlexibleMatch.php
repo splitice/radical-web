@@ -1,7 +1,6 @@
 <?php
 namespace Radical\Web\Page\Router\Recognisers\Templates\PatternTemplate;
 
-use Radical\Utility\Net\URL;
 use Radical\Basic\String\Format;
 
 class FlexibleMatch {
