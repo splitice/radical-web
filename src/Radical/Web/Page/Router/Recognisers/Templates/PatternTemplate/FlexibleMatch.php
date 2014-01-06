@@ -69,7 +69,7 @@ class FlexibleMatch {
 		throw new \InvalidArgumentException("Invalid argument type:".gettype($data));
 	}
 	
-	function matches(URL $url, &$matches){
+	function matches($url, &$matches){
 		$expr = $this->expr;
 		return $expr($url, $matches);
 	}
