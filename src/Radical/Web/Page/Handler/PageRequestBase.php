@@ -41,14 +41,19 @@ abstract class PageRequestBase {
 		$depth = 0;
 		while($this->page->can($method) || $this->can_fake($method)){
 			$depth++;
+			
+			$real_method = $method;
+			if($this->can_fake($method)){
+				$method = 'GET';
+			}
 	
 			$return = $this->page->$method();
 			if($return){
 				ob_clean();
 				$this->page = $return;
 			}else{
-				if(!$this->page->can($method)){
-					if($method == 'HEAD'){
+				if(!$this->page->can($real_method)){
+					if($real_method == 'HEAD'){
 						//$contents = ob_get_contents();
 						//Headers only, no body
 						ob_clean();
