@@ -29,6 +29,8 @@ abstract class PageRequestBase {
 	}
 	
 	function execute($method){
+		if($method=='GET') $this->cache->preExecute();
+		
 		//No assumptions
 		$method = strtoupper($method);
 		

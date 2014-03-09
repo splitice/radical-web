@@ -14,4 +14,9 @@ class NullCacheManager implements ICacheManager {
 	function postExecute(HeaderManager $headers){
 		//Do nothing
 	}
+	
+
+	function preExecute(){
+		
+	}
 }

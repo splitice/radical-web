@@ -10,4 +10,6 @@ interface ICacheManager {
 	 * @param HeaderManager $headers
 	 */
 	function postExecute(HeaderManager $headers);
+	
+	function preExecute();
 }

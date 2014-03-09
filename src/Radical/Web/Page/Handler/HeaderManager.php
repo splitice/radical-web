@@ -7,6 +7,14 @@ class HeaderManager extends CollectionObject {
 	const DEFAULT_EXPIRE = 1200;//20minutes
 	
 	public $status = 200;
+	private $output = false;
+	
+	function Add($k,$v){
+		/*if($this->output){
+			throw new \Exception("Headers alrady output");
+		}*/
+		return parent::Add($k, $v);
+	}
 	
 	function __construct($headers=null){
 		if($headers!==null){
@@ -46,14 +54,15 @@ class HeaderManager extends CollectionObject {
 		$this->Add('Content-Type',$mime);
 	}
 	function output(){
-		
 		//No data
-		if(!$this->data){
+		if(!count($this->data)){
 			header($this->status.' A', true, $this->status);
-		}else{		
+		}else{
 			foreach($this->data as $k=>$v){
-				header($k.': '.$v,true, $this->status);
+				header($k.': '.$v, true, $this->status);
 			}
 		}
+		
+		$this->output = true;
 	}
 }

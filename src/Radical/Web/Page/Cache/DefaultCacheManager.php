@@ -10,6 +10,18 @@ use Radical\Web\Page\Handler\HeaderManager;
  * @author SplitIce
  */
 class DefaultCacheManager implements ICacheManager {
+	function preExecute(){
+	}
+	private function notModified(HeaderManager $headers){
+		//Clear output buffers
+		while(ob_get_level()) ob_end_clean();
+		
+		//Start a new buffer
+		ob_start();
+		
+		//Send 304 not modified
+		$headers->Status(304);
+	}
 	function postExecute(HeaderManager $headers){
 		//If people dont utilise the checks until now this will catch it at the end of the request
 		if($headers->status == 200){
@@ -22,20 +34,24 @@ class DefaultCacheManager implements ICacheManager {
 					
 					//If the user has an unmodified version (aparently) based on last modifed dates
 					if($lmts <= strtotime($ims)){
-						//Clear output buffers
-						while(ob_get_level()) ob_end_clean();
-						
-						//Start a new buffer
-						ob_start();
-						
-						//Send 304 not modified
-						$headers->Status(304);
+						$this->notModified($headers);
 					}
 				}
 			}else{ //If no Last-Modified specified
-			//Generate automatic etag from output
-			
-			//Look for etag in request
+				//Look for etag in request
+				$et = \Radical\Web\Page\Request::header('If-None-Match');
+				if(isset($headers['ETag'])){
+					if($et == $headers['ETag']){
+						$this->notModified($headers);
+					}
+				}else{
+					$hash = md5(ob_get_contents());
+					if($hash == substr($et,1,-1)){
+						$this->notModified($headers);
+					}else{
+						$headers->setEtag($hash);
+					}
+				}
 			}
 		}
 	}
