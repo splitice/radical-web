@@ -13,13 +13,13 @@ class Session {
 	const DEFAULT_IP = '::1';
 	
 	/**
-	 * @var Radical\Web\Session\Storage\ISessionStorage
+	 * @var \Radical\Web\Session\Storage\ISessionStorage
 	 */
 	public static $data;
+
 	/**
-	 * @var Radical\Web\Session\Authenticator
+	 * @var \Radical\Web\Session\Authenticator
 	 */
-	
 	public static $auth;
 	
 	private static $extras = array();
