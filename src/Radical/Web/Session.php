@@ -13,11 +13,11 @@ class Session {
 	const DEFAULT_IP = '::1';
 	
 	/**
-	 * @var Web\Session\Storage\ISessionStorage
+	 * @var Radical\Web\Session\Storage\ISessionStorage
 	 */
 	public static $data;
 	/**
-	 * @var Web\Session\Authenticator
+	 * @var Radical\Web\Session\Authenticator
 	 */
 	
 	public static $auth;
