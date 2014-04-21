@@ -29,7 +29,7 @@ class Handler {
 	
 	/**
 	 * @param bool $notExistsCreate
-	 * @return \Web\Page\Handler\NullPageRequest
+	 * @return \Radical\Web\Page\Handler\NullPageRequest
 	 */
 	static function current($notExistsCreate = false){
 		static::Init();

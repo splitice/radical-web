@@ -2,7 +2,10 @@
 namespace Radical\Web\Page\Handler;
 
 abstract class HTMLPageBase extends PageBase implements IMeta {
-	protected $_meta;
+    /**
+     * @var MetaManager
+     */
+    protected $_meta;
 	function __construct(){
 		$this->_meta = new MetaManager();
 	}

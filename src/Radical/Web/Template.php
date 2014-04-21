@@ -74,7 +74,7 @@ class Template extends Page\Handler\PageBase {
 	 * Wrap in a container
 	 * 
 	 * @param string $file
-	 * @return \Web\Templates\ContainerTemplate
+	 * @return \Radical\Web\Templates\ContainerTemplate
 	 */
 	function containedBy($file = Templates\ContainerTemplate::DEFAULT_CONTAINER){
 		return new Templates\ContainerTemplate($this->name, $this->container, $this->vars, $file);
@@ -137,7 +137,7 @@ class Template extends Page\Handler\PageBase {
 	/**
 	 * Get the adapter for this template
 	 * 
-	 * @return \Web\Templates\Adapter\ITemplateAdapter
+	 * @return \Radical\Web\Templates\Adapter\ITemplateAdapter
 	 */
 	protected function adapter(){	
 		$handlers = static::adapters();
@@ -153,7 +153,7 @@ class Template extends Page\Handler\PageBase {
 	/**
 	 * Get the scope
 	 * 
-	 * @return \Web\Templates\Scope
+	 * @return \Radical\Web\Templates\Scope
 	 */
 	protected function _scope(){
 		return new Scope($this->vars, $this->handler);

@@ -27,7 +27,7 @@ class Session {
 	/**
 	 * Get the users IP
 	 * 
-	 * @return \Utility\Net\IP
+	 * @return \Radical\Utility\Net\IP
 	 */
 	static function IP(){
 		if(\Radical\Core\Server::isCLI()){
