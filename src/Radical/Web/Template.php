@@ -126,8 +126,8 @@ class Template extends Page\Handler\PageBase {
 	/**
 	 * Check if a specified template resource exists
 	 * 
-	 * @param unknown_type $name
-	 * @param unknown_type $output
+	 * @param mixed $name
+	 * @param mixed $output
 	 * @return boolean
 	 */
 	static function exists($name,$output='HTML'){

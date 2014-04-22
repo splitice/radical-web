@@ -9,7 +9,7 @@ class Handler {
 	/**
 	 * A stack of Page\Handlers, used for preserving state (headers etc) during subrequests.
 	 * 
-	 * @var SplStack
+	 * @var \SplStack
 	 */
 	static $stack;
 	
