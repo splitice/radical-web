@@ -14,7 +14,7 @@ abstract class HTMLPageBase extends PageBase implements IMeta {
 	}
 	function meta($what = null, $type = 'meta'){
 		if($what === null) return $this->_meta;
-		if(isset($this->_meta[$what]))
+		if(isset($this->_meta->offsetExists($what)))
 			return $this->_meta->toTag($what,$this->_meta[$what], $type);
 	}
 }
