@@ -5,6 +5,9 @@ use Radical\Core\ErrorHandling;
 use Radical\Core\IRenderToString;
 
 abstract class PageBase implements IPage, IRenderToString {
+    function __construct(){
+
+    }
 	function can($method){
 		return method_exists($this,$method);
 	}
