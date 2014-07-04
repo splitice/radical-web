@@ -38,21 +38,21 @@ class Authenticator {
 	}
 
 	/**
-	 * @param \Web\Session\Authentication\Source\ISessionSource $source
+	 * @param \Radical\Web\Session\Authentication\Source\ISessionSource $source
 	 */
 	public function setSource($source) {
 		$this->source = $source;
 	}
 
 	/**
-	 * @param \Web\Session\Authentication\IAuthenticator $authenticator
+	 * @param \Radical\Web\Session\Authentication\IAuthenticator $authenticator
 	 */
 	public function setAuthenticator($authenticator) {
 		$this->authenticator = $authenticator;
 	}
 	
 	/**
-	 * @return the $source
+	 * @return \Radical\Web\Session\Authentication\Source\ISessionSource $source
 	 */
 	private function _source() {
 		if($this->source === null){

@@ -39,12 +39,12 @@ abstract class PageRequestBase {
 	
 		//Setup output buffering
 		ob_start();
-	
+
+        $real_method = $method;
 		$depth = 0;
 		while($this->page->can($method) || $this->can_fake($method)){
 			$depth++;
-			
-			$real_method = $method;
+
 			if($this->can_fake($method)){
 				$method = 'GET';
 			}
@@ -72,11 +72,11 @@ abstract class PageRequestBase {
 				throw new PageHandlerException('Max request depth of '.static::MAX_REQUEST_DEPTH.' exceeded.');
 			}
 		}
-	
+        ob_end_flush();
+
 		//Nothing was handled
 		if(!$depth){
 			PH::Pop();
-			ob_end_flush();
 			$this->headers->Clear();
 			throw new PageHandlerException('Invalid or unknown method '.$method);
 		}
