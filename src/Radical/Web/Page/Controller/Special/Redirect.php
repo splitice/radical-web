@@ -5,9 +5,11 @@ use Radical\Web\Page\Handler;
 
 class Redirect extends Handler\PageBase {
 	protected $url;
+    protected $code;
 	
-	function __construct($url){
+	function __construct($url, $code = 301){
 		$this->url = $url;
+        $this->code = $code;
 	}
 	/**
 	 * Handle GET request
@@ -16,7 +18,7 @@ class Redirect extends Handler\PageBase {
 	 */
 	function GET(){
 		$headers = \Radical\Web\Page\Handler::$stack->top()->headers;
-		$headers->Status(301);
+		$headers->Status($this->code);
 		$headers->Add('Location',$this->url);
 	}
 	
