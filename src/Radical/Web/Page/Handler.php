@@ -44,11 +44,10 @@ class Handler {
 	}
 	
 	static function objectify($object,$data = null){
-		$classes = \Radical\Core\Libraries::get('*\\Web\\Page\\Controller\\'.$object);
-		if(!$classes){
+		$class = \Radical\Core\Libraries::getProjectOrCommon('*\\Web\\Page\\Controller\\'.$object);
+		if(!$class){
 			return null;
 		}
-		$class = $classes[0];
 		return new $class($data);
 	}
 }
