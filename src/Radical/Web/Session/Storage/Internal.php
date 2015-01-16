@@ -16,11 +16,14 @@ class Internal extends ModuleBase implements ISessionStorage {
 		parent::__construct();
 	}
 	
-	private function _open(){
+	private function _open($read = false){
 		if($this->is_open)
 			return false;
 		
 		if(!$this->is_cli){
+            if($read && empty($_COOKIE['PHPSESSID'])){
+                return true;
+            }
 			session_start();
 			if(count($_SESSION) == 0)
 				$this->is_empty = true;
@@ -34,7 +37,7 @@ class Internal extends ModuleBase implements ISessionStorage {
 			return false;
 		
 		if(!$this->is_cli){
-			if(count($_SESSION) == 0  && $this->is_empty){
+			if(isset($_SESSION) && count($_SESSION) == 0  && $this->is_empty){
 				session_destroy();
 			}else{
 				session_write_close();
@@ -45,22 +48,23 @@ class Internal extends ModuleBase implements ISessionStorage {
 		return true;
 	}
 	
-	function lock_open(){
-		return $this->_open();
+	function lock_open($read = false){
+		return $this->_open($read);
 	}
 	
 	function lock_close(){
 		return $this->_close();
 	}
 	
-	function refresh(){
+	function refresh($read = false){
 		$this->is_loaded = true;
 		$open = $this->is_open;
 		if(!$open)
-			$this->_open();
+			$this->_open($read);
 		
-		if(!$this->is_cli)
-			$this->data = $_SESSION;
+		if(!$this->is_cli) {
+            $this->data = isset($_SESSION) ? $_SESSION : array();
+        }
 		
 		if(!$open)
 			$this->_close();
@@ -77,7 +81,7 @@ class Internal extends ModuleBase implements ISessionStorage {
 	}
 	public function offsetExists($offset) {
 		if(!$this->is_loaded)
-			$this->refresh();
+			$this->refresh(true);
 		return isset($this->data[$offset]);
 	}
 	public function offsetUnset($offset) {
@@ -93,7 +97,7 @@ class Internal extends ModuleBase implements ISessionStorage {
 	}
 	public function offsetGet($offset) {
 		if(!$this->is_loaded)
-			$this->refresh();
+			$this->refresh(true);
 		return isset($this->data[$offset]) ? $this->data[$offset] : null;
 	}
 	
@@ -113,4 +117,17 @@ class Internal extends ModuleBase implements ISessionStorage {
 		if(!$open)
 			$this->_close();
 	}
+
+    function isEmpty(){
+        $open = $this->is_open;
+        if(!$open)
+            $this->_open();
+
+        $ret =  count($_SESSION) == 0;
+
+        if(!$open)
+            $this->_close();
+
+        return $ret;
+    }
 }

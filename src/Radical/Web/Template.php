@@ -189,7 +189,7 @@ class Template extends Page\Handler\PageBase {
 	 *
 	 * @throws \Exception
 	 */
-	function pOST() {
+	function POST() {
 		return $this->GET ();
 	}
 }

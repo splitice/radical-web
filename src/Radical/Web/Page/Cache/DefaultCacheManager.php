@@ -40,12 +40,17 @@ class DefaultCacheManager implements ICacheManager {
 			}else{ //If no Last-Modified specified
 				//Look for etag in request
 				$et = \Radical\Web\Page\Request::header('If-None-Match');
+                if(strlen($et) >= 2){
+                    if(substr($et,0,2) == 'W/'){
+                        $et = substr($et,2);
+                    }
+                }
 				if(isset($headers['ETag'])){
 					if($et == $headers['ETag']){
 						$this->notModified($headers);
 					}
 				}else{
-					$hash = md5(ob_get_contents());
+					$hash = md5(md5(ob_get_contents()).md5(session_id()));
 					if($hash == substr($et,1,-1)){
 						$this->notModified($headers);
 					}else{
