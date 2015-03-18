@@ -25,7 +25,7 @@ abstract class Flexible implements IPageRecognise {
 		}
 	}
 	
-	protected function add_match(FlexibleMatch $match){
+	protected static function add_match(FlexibleMatch $match){
 		self::$match[] = $match;
 	}
 }

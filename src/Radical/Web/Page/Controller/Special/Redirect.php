@@ -20,6 +20,7 @@ class Redirect extends Handler\PageBase {
 		$headers = \Radical\Web\Page\Handler::$stack->top()->headers;
 		$headers->Status($this->code);
 		$headers->Add('Location',$this->url);
+		$headers->Add('Cache-Control','nocache');
 	}
 	
 	/**
@@ -27,7 +28,7 @@ class Redirect extends Handler\PageBase {
 	 *
 	 * @throws \Exception
 	 */
-	function pOST(){
+	function POST(){
 		return $this->GET();
 	}
 }
