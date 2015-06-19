@@ -2,6 +2,7 @@
 namespace Radical\Web\Page\Handler;
 
 use Radical\Basic\Arr\Object\CollectionObject;
+
 class MetaManager extends CollectionObject {
 	function __construct($data = array()){
 		if(!isset($data['keywords'])){

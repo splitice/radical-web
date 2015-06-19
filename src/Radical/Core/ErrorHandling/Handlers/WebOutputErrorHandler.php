@@ -3,8 +3,8 @@ namespace Radical\Core\ErrorHandling\Handlers;
 
 use Radical\Core\ErrorHandling\Errors\Internal\ErrorBase;
 use Radical\Core\ErrorHandling\Errors\Internal\ErrorException;
-use Radical\Web\Page\Handler\PageRequest;
 use Radical\Web\Page\Controller\Error;
+use Radical\Web\Page\Handler\PageRequest;
 
 class WebOutputErrorHandler extends ErrorHandlerBase {
 	function error(ErrorBase $error) {

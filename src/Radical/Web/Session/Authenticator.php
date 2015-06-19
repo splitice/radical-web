@@ -1,10 +1,9 @@
 <?php
 namespace Radical\Web\Session;
 
-use Radical\Web\Session\User\IUserAdmin;
-
-use Radical\Web\Session\Authentication\Source\ISessionSource;
 use Radical\Web\Session\Authentication\IAuthenticator;
+use Radical\Web\Session\Authentication\Source\ISessionSource;
+use Radical\Web\Session\User\IUserAdmin;
 
 /**
  * Authenticator Bridge class between the Authentication Source

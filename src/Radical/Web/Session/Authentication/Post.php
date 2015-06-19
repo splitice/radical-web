@@ -1,8 +1,8 @@
 <?php
 namespace Radical\Web\Session\Authentication;
 
-use Radical\Web\Session\ModuleBase;
 use Radical\Web\Session\Authentication\Source\ISessionSource;
+use Radical\Web\Session\ModuleBase;
 
 class Post extends ModuleBase implements IAuthenticator {
 	const FIELD_USERNAME = 'username';

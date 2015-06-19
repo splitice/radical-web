@@ -1,8 +1,8 @@
 <?php
 namespace Radical\Web\Session\Storage;
 
-use Radical\Web\Session\ModuleBase;
 use Radical\Core\Server;
+use Radical\Web\Session\ModuleBase;
 
 class Internal extends ModuleBase implements ISessionStorage {
 	protected $data;

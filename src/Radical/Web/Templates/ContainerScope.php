@@ -3,7 +3,6 @@ namespace Radical\Web\Templates;
 
 use Radical\Web\Page\Handler\IPage;
 use Radical\Web\Page\Handler\PageBase;
-use Radical\Web\Page\Handler\PageRequest;
 use Radical\Web\Template;
 
 /**

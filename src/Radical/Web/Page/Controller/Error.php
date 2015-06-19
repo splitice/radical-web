@@ -1,10 +1,10 @@
 <?php
 namespace Radical\Web\Page\Controller;
 
-use Radical\Web\Page\Router\Recognise;
-use Radical\Web\Page\Handler\HTMLPageBase;
-use Radical\Web\Template;
 use Radical\Core\ErrorHandling\Errors\Internal\ErrorException;
+use Radical\Web\Page\Handler\HTMLPageBase;
+use Radical\Web\Page\Router\Recognise;
+use Radical\Web\Template;
 
 class Error extends HTMLPageBase {
 	private $error;

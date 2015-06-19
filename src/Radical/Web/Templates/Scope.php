@@ -1,10 +1,10 @@
 <?php
 namespace Radical\Web\Templates;
 
-use Radical\Web\Widget;
 use Radical\Web\Page\Handler\IPage;
 use Radical\Web\Page\Handler\SubRequest;
 use Radical\Web\Template;
+use Radical\Web\Widget;
 
 /**
  * The scope passed to templates, commonly referred to as ($_)

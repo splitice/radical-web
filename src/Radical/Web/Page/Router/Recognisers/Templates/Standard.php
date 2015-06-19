@@ -1,8 +1,8 @@
 <?php
 namespace Radical\Web\Page\Router\Recognisers\Templates;
 
-use Radical\Utility\Net\URL;
 use Radical\Basic\String\Format;
+use Radical\Utility\Net\URL;
 use Radical\Web\Page\Router\IPageRecognise;
 
 class Standard implements IPageRecognise {
