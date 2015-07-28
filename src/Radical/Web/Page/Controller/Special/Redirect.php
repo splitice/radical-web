@@ -7,7 +7,7 @@ class Redirect extends Handler\PageBase {
 	protected $url;
     protected $code;
 	
-	function __construct($url, $code = 302){
+	function __construct($url, $code = 303){
 		$this->url = $url;
         $this->code = $code;
 	}
