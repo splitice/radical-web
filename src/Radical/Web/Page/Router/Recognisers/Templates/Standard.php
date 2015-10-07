@@ -9,8 +9,9 @@ class Standard implements IPageRecognise {
 	static $match = array();
 	static function recognise(URL $url){
 		$path = $url->getPath()->getPath(true);
+		$match = null;
 		foreach(static::$match as $expr=>$class){
-			$match = Format::Consume($path, $expr);
+			$matches = Format::consumeRegex($path, $expr, $match);
 			if($match){
 				if(is_array($class) || is_string($class)){
 					if(is_array($class)){
