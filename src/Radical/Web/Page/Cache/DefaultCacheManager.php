@@ -50,7 +50,7 @@ class DefaultCacheManager implements ICacheManager {
 						$this->notModified($headers);
 					}
 				}else{
-					$hash = md5(md5(ob_get_contents()).md5(session_id()));
+					$hash = md5(md5(ob_get_contents(), true).session_id());
 					if($hash == substr($et,1,-1)){
 						$this->notModified($headers);
 					}else{

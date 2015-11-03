@@ -2,6 +2,6 @@
 namespace Radical\Web\Page\Handler;
 
 interface IPage {
-	function execute();
+	function execute($method = 'GET');
 	function can($m);
 }

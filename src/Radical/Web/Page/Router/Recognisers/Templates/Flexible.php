@@ -8,7 +8,7 @@ use Radical\Web\Page\Router\Recognisers\Templates\PatternTemplate\FlexibleMatch;
 abstract class Flexible implements IPageRecognise {
 	private static $match = null;
 	
-	protected abstract static function generate_matches();
+	//protected abstract static function generate_matches();
 	
 	static function recognise(URL $url){
 		if(self::$match === null){

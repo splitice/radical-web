@@ -12,7 +12,7 @@ class Standard implements IPageRecognise {
 		$match = null;
 		foreach(static::$match as $expr=>$class){
 			$matches = Format::consumeRegex($path, $expr, $match);
-			if($match){
+			if($matches){
 				if(is_array($class) || is_string($class)){
 					if(is_array($class)){
 						$data = isset($class['data'])?$class['data']:$match;
