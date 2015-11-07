@@ -16,6 +16,10 @@ abstract class PageBase implements IPage, IRenderToString {
 		$request = new PageRequest($this);
 		ErrorHandling\Handler::Handle(array($request,'Execute'),array($method));
 	}
+
+	function execute_request($method){
+		return $this->$method();
+	}
 	
 	function renderString(){
 		$sr = new SubRequest($this);

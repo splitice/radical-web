@@ -49,7 +49,7 @@ abstract class PageRequestBase {
 				$method = 'GET';
 			}
 	
-			$return = $this->page->$method();
+			$return = $this->page->execute_request($method);
 			if($return){
 				ob_clean();
 				$this->page = $return;
