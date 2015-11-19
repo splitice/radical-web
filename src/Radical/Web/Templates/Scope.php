@@ -27,6 +27,31 @@ class Scope {
 		$this->vars = $vars;
 		$this->handler = $handler;
 	}
+
+	/**
+	 * Check if a variable exists
+	 *
+	 * @param $name
+	 * @return bool
+	 */
+	function var_exists($name){
+		return isset($this->vars[$name]);
+	}
+
+	/**
+	 * Get the value of a variable
+	 *
+	 * @param $name
+	 * @param string $type
+	 * @return mixed
+	 * @throws \Exception
+	 */
+	function var_get($name, $type = 'string'){
+		if(!isset($this->vars[$name])){
+			throw new \Exception('Variable '.$name.' not found');
+		}
+		return $this->vars[$name];
+	}
 	
 	function __call($method, $args){
 		if(isset($this->$method)){
