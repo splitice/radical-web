@@ -16,7 +16,7 @@ class Template extends Page\Handler\PageBase {
 	protected $file;
 	protected $name = 'error';
 	protected $handler = null;
-	private $container;
+	public $container;
 	
 	/**
 	 * Instansiate a new Template. Templates can be used as a page handler.

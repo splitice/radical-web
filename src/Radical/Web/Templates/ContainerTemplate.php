@@ -6,12 +6,10 @@ class ContainerTemplate extends \Radical\Web\Template {
 	
 	public $incBody = true;
 	protected $body;
-	protected $container;
 	
 	function __construct($body, $vars = array(), $container = 'HTML', $name = self::DEFAULT_CONTAINER){
 		parent::__construct($name,$vars,$container);
 		$this->body = $body;
-		$this->container = $container;
 	}
 	
 	protected function _scope(){
