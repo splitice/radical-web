@@ -147,8 +147,10 @@ class Scope {
 	function incl($name,$container = 'HTML', $vars = null){
 		if($vars === null)
 			$_ = $this;
-		else
-			$_ = new Scope($vars, $this->handler);
+		else {
+			$_ = clone $this;
+			$_->vars = $vars;
+		}
 		$___path = Template::getPath($name,$container);
 		if(!$___path){
 			throw new \Exception('Couldnt find '.$name.' from '.$container.' to include.');

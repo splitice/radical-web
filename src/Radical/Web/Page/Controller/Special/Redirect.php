@@ -21,6 +21,7 @@ class Redirect extends Handler\PageBase {
 		$headers->Status($this->code);
 		$headers->Add('Location',$this->url);
 		$headers->Add('Cache-Control','nocache');
+		$headers->Add('Expires','0');
 	}
 	
 	/**

@@ -24,7 +24,7 @@ class Internal extends ModuleBase implements ISessionStorage {
             if($read && empty($_COOKIE['PHPSESSID'])){
                 return true;
             }
-			session_start();
+			@session_start();
 			if(count($_SESSION) == 0)
 				$this->is_empty = true;
 		}

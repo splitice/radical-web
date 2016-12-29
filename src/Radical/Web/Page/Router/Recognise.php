@@ -29,14 +29,16 @@ class Recognise {
 	
 	static function register($class, $position = self::POSITION_END){
 		if($position == self::POSITION_END){
-			self::$recognisers[$class] = $class;
+			self::$recognisers[] = $class;
 		}else{
 			array_unshift(self::$recognisers, $class);
 		}
 	}
 	
 	static function register_expr($expr){
-		foreach(\Radical\Core\Libraries::get($expr) as $class){
+		$libs = \Radical\Core\Libraries::get($expr);
+		sort($libs);
+		foreach($libs as $class){
 			self::register($class);
 		}
 	}
