@@ -5,7 +5,7 @@ use Radical\Core\Server;
 use Radical\Web\Session\ModuleBase;
 
 class Internal extends ModuleBase implements ISessionStorage {
-	protected $data;
+	protected $data = array();
 	private $is_open = false;
 	private $is_empty = false;
 	private $is_loaded = false;
@@ -90,8 +90,12 @@ class Internal extends ModuleBase implements ISessionStorage {
 		$open = $this->is_open;
 		if(!$open)
 			$this->_open();
-		unset($_SESSION[$offset]);
-		$this->data = $_SESSION;
+		if(!$this->is_cli) {
+			unset($_SESSION[$offset]);
+			$this->data = $_SESSION;
+		}else{
+			unset($this->data[$offset]);
+		}
 		if(!$open)
 			$this->_close();
 	}
@@ -108,12 +112,20 @@ class Internal extends ModuleBase implements ISessionStorage {
 		$open = $this->is_open;
 		if(!$open)
 			$this->_open();
-		if (is_null($name)) {
-			$_SESSION[] = $data;
+		if(!$this->is_cli) {
+			if (is_null($name)) {
+				$_SESSION[] = $data;
+			} else {
+				$_SESSION[$name] = $data;
+			}
+			$this->data = $_SESSION;
 		}else{
-			$_SESSION[$name] = $data;
+			if (is_null($name)) {
+				$this->data[] = $data;
+			} else {
+				$this->data[$name] = $data;
+			}
 		}
-		$this->data = $_SESSION;
 		if(!$open)
 			$this->_close();
 	}

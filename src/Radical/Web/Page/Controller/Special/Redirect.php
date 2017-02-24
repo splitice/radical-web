@@ -6,6 +6,24 @@ use Radical\Web\Page\Handler;
 class Redirect extends Handler\PageBase {
 	protected $url;
     protected $code;
+
+	/**
+	 * @return mixed
+	 */
+	public function getUrl()
+	{
+		return $this->url;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getCode()
+	{
+		return $this->code;
+	}
+
+
 	
 	function __construct($url, $code = 303){
 		$this->url = $url;
