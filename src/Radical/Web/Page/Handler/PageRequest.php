@@ -8,7 +8,7 @@ class PageRequest extends PageRequestBase {
 		
 		//Flush Output
 		$this->headers->Output();
-		ob_end_flush();
+		ob_flush();
 		
 		//Remove from stack
 		PH::Pop();

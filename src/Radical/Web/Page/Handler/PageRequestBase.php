@@ -28,7 +28,7 @@ abstract class PageRequestBase {
 		return $method == 'HEAD';
 	}
 	
-	function execute($method){
+	function execute($method, $args = null){
 		if($method=='GET') $this->cache->preExecute();
 		
 		//No assumptions
@@ -39,40 +39,41 @@ abstract class PageRequestBase {
 	
 		//Setup output buffering
 		ob_start();
+		try {
+			$real_method = $method;
+			$depth = 0;
+			while ($this->page->can($method) || $this->can_fake($method)) {
+				$depth++;
 
-        $real_method = $method;
-		$depth = 0;
-		while($this->page->can($method) || $this->can_fake($method)){
-			$depth++;
-
-			if($this->can_fake($method)){
-				$method = 'GET';
-			}
-	
-			$return = $this->page->execute_request($method);
-			if($return){
-				ob_clean();
-				$this->page = $return;
-			}else{
-				if(!$this->page->can($real_method)){
-					if($real_method == 'HEAD'){
-						//$contents = ob_get_contents();
-						//Headers only, no body
-						ob_clean();
-					}
+				if ($this->can_fake($method)) {
+					$method = 'GET';
 				}
-				break;
+
+				$return = $this->page->execute_request($method, $args);
+				if ($return) {
+					ob_clean();
+					$this->page = $return;
+				} else {
+					if (!$this->page->can($real_method)) {
+						if ($real_method == 'HEAD') {
+							//$contents = ob_get_contents();
+							//Headers only, no body
+							ob_clean();
+						}
+					}
+					break;
+				}
+
+				//Infinite loop?
+				if ($depth > static::MAX_REQUEST_DEPTH) {
+					PH::Pop();
+					$this->headers->Clear();
+					throw new PageHandlerException('Max request depth of ' . static::MAX_REQUEST_DEPTH . ' exceeded.');
+				}
 			}
-				
-			//Infinite loop?
-			if($depth > static::MAX_REQUEST_DEPTH){
-				PH::Pop();
-				ob_end_flush();
-				$this->headers->Clear();
-				throw new PageHandlerException('Max request depth of '.static::MAX_REQUEST_DEPTH.' exceeded.');
-			}
+		}finally {
+			ob_end_flush();
 		}
-        ob_end_flush();
 
 		//Nothing was handled
 		if(!$depth){

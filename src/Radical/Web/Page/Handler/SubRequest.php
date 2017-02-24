@@ -10,12 +10,15 @@ class SubRequest extends PageRequestBase {
 		$this->headers = new NullHeaderManager();
 		$this->cache = new NullCacheManager();
 	}
-	function execute($method = 'GET'){
+	function execute($method = 'GET', $args = null){
 		ob_start();
-		parent::Execute($method);
-		$data = ob_get_contents();
-		ob_end_clean();
-		
+		try {
+			parent::Execute($method, $args);
+			$data = ob_get_contents();
+		}finally {
+			ob_end_clean();
+		}
+
 		//Pop off the stack
 		PH::Pop();
 		

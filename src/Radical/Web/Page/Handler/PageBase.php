@@ -17,10 +17,12 @@ abstract class PageBase implements IPage, IRenderToString {
 		ErrorHandling\Handler::Handle(array($request,'Execute'),array($method));
 	}
 
-	function execute_request($method){
-		$args = $_GET;
-		if($method == 'POST'){
-			$argc = $_POST;
+	function execute_request($method, $args = null){
+		if($args === null) {
+			$args = $_GET;
+			if ($method == 'POST') {
+				$args = $_POST;
+			}
 		}
 		return $this->$method($args);
 	}
