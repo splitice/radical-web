@@ -5,6 +5,7 @@ use Radical\Web\Page\Cache\DefaultCacheManager;
 use Radical\Web\Page\Handler as PH;
 use Radical\Web\Page\Handler\Exceptions\PageHandlerException;
 use Radical\Web\Page\Router\Recognise;
+use Splitice\ResourceFactory;
 
 abstract class PageRequestBase {
 	const MAX_REQUEST_DEPTH = 20;
@@ -21,7 +22,8 @@ abstract class PageRequestBase {
 	function __construct(IPage $page = null){
 		$this->page = $page;
 		$this->headers = new HeaderManager();
-		$this->cache = new DefaultCacheManager();
+		$cacheManager = ResourceFactory::getInstance()->get('cache_manager');
+		$this->cache = $cacheManager == null ? new DefaultCacheManager() : $cacheManager;
 	}
 	
 	private function can_fake($method){
