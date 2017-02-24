@@ -1,7 +1,7 @@
 <?php
 namespace Radical\Web\Page\Router\Recognisers\Templates\PatternTemplate;
 
-use Radical\Basic\String\Format;
+use Radical\Basic\StringHelper\Format;
 
 class FlexibleMatch {
 	private $expr;
