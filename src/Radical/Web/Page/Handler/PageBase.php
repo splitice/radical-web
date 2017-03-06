@@ -19,10 +19,7 @@ abstract class PageBase implements IPage, IRenderToString {
 
 	function execute_request($method, $args = null){
 		if($args === null) {
-			$args = $_GET;
-			if ($method == 'POST') {
-				$args = $_POST;
-			}
+			$args = $_REQUEST;
 		}
 		return $this->$method($args);
 	}
