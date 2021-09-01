@@ -26,7 +26,7 @@ class Standard implements IPageRecognise {
 						}
 					}
 					if(is_string($class)){
-						if($class{0} != '\\'){
+						if($class[0] != '\\'){
 							$class_expr = '\\*\\Web\\Page\\Controller\\'.$class;
 							$class = null;
 							

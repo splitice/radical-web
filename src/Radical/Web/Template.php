@@ -172,7 +172,7 @@ class Template extends Page\Handler\PageBase {
 
 		if($adapter instanceof Templates\Adapter\ITemplateAdapter){
 			$top = Page\Handler::Top();
-			if($top && $top->headers){
+			if($top && $top->headers && !$top->headers->get('Content-Type')){
 				$top->headers->Add('Content-Type', 'text/html;charset=utf-8');
 			}else{
 				//Warning

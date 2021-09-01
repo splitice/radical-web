@@ -25,7 +25,7 @@ abstract class Widget {
 	}
 	
 	static function load($name,array $vars){
-		if($name{0} != '\\'){
+		if($name[0] != '\\'){
 			$name = '\\Web\\Widgets\\'.$name;
 		}
 		return new $name($vars);

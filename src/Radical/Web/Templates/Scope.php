@@ -120,7 +120,7 @@ class Scope {
 		}
 		
 		//Is relative? Make siterooted
-		if($first_part{0} != '/'){
+		if($first_part[0] != '/'){
 			$object = \Radical\Core\Server::getSiteRoot().$object;
 		}
 		

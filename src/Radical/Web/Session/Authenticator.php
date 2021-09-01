@@ -74,8 +74,8 @@ class Authenticator {
 		$this->authenticator = $authenticator;
 		$this->source = $source;
 	}
-	function login($username,$password){
-		return $this->_source()->Login($username, $password);
+	function login($username, $password, ...$additional){
+		return $this->_source()->Login($username, $password, ...$additional);
 	}
 	function loggedInArea(){
 		if($this->isLoggedIn()) return true;

@@ -4,7 +4,7 @@ namespace Radical\Web\Session\Authentication\Source;
 use Radical\Web\Session\ModuleBase;
 
 class NullSource extends ModuleBase implements ISessionSource {
-	function login($username,$password){
+	function login($username,$password,...$args){
 		
 	}
 	function isLoggedIn(){

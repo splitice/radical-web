@@ -3,7 +3,7 @@ namespace Radical\Web\Page\Handler;
 use Radical\Web\Page\Handler as PH;
 
 class PageRequest extends PageRequestBase {	
-	function execute($method){
+	function execute($method, $args = null){
 		parent::Execute($method);
 		
 		//Flush Output

@@ -20,7 +20,7 @@ class FlexibleMatch {
 			}
 			
 			$class = $data;
-			if($data{0} != '\\'){
+			if($data[0] != '\\'){
 				$class_expr = '\\*\\Web\\Page\\Controller\\'.$data;
 				$class = null;
 					
@@ -51,7 +51,7 @@ class FlexibleMatch {
 				throw new \InvalidArgumentException('String must be more than 0B');
 			}
 		
-			if($len > 1 && $data{0} == '`'){
+			if($len > 1 && $data[0] == '`'){
 				return function($url, &$matches) use ($data){
 					return preg_match($data, (string)$url, $matches);
 				};
